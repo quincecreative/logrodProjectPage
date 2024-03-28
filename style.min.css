@@ -103,7 +103,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px
+    font-size: 15px
 }
 
 .displayNone {
@@ -155,7 +155,9 @@
 
 .cursor-background {
     width: 22px;
-    height: 22px
+    height: 22px;
+    mix-blend-mode: saturation;
+    background: #fff
 }
 
 .strLineBottom,
@@ -269,11 +271,11 @@
 }
 
 .project-title {
-    font-size: 30px;
+    font-size: 22px;
     color: #fff;
     text-transform: uppercase;
     clip-path: polygon(0 0, 100%0, 100% 100%, 0 100%);
-    line-height: 40px;
+    line-height: 60px;
     font-family: "Mundial"
 }
 
@@ -295,7 +297,8 @@
 }
 
 .projects-bckg-images {
-    position: absolute
+    position: absolute;
+    transition: .5s
 }
 
 .transparent-bckg-img {
