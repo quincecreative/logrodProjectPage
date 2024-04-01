@@ -1,0 +1,312 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+#mainContainerMap,
+#mainContainerProjects,
+#projectsWrap {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden
+}
+
+#mainContainerMap,
+#mainContainerProjects {
+    top: -100vh
+}
+
+#mainContainerProjects {
+    cursor: pointer;
+    background-color: #242320;
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, #303030 1px, transparent 1px), linear-gradient(to bottom, #303030 1px, transparent 1px)
+}
+
+@font-face {
+    font-family: "Mundial";
+    src: url(https://raw.githubusercontent.com/quincecreative/logrodProjectPage/gh-pages/Mundial\ Light.ttf)
+}
+
+.loadingPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.loadingSpinner {
+    border: 4px solid rgba(118, 118, 118, .1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-left-color: #fff;
+    animation: spin 2s linear infinite
+}
+
+.loadingPercentages {
+    position: absolute;
+    font-style: bold;
+    color: #fff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif
+}
+
+.renderCanvas {
+    width: 100vw;
+    height: 100vh;
+    touch-action: none
+}
+
+.switcher {
+    width: 100vw;
+    height: 50px;
+    background-color: #efefef;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Mundial";
+    font-size: 20px;
+    font-weight: 900;
+    z-index: 9000;
+    cursor: pointer
+}
+
+.canvasZone {
+    width: 100%;
+    height: 100%
+}
+
+.devMode {
+    cursor: pointer
+}
+
+.devPopUp {
+    width: 200px;
+    height: 50px;
+    background-color: #fff;
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    z-index: 20;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px
+}
+
+.displayNone {
+    display: none
+}
+
+.mouseFollow {
+    position: relative;
+    top: -20px;
+    width: 250px;
+    height: 50px;
+    background-color: #242320;
+    transition: transform .1s;
+    z-index: 9000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: none;
+    pointer-events: none
+}
+
+.mouseFollowText {
+    font-family: "Mundial";
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    margin: 0
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff
+}
+
+.cursor,
+.cursor-background,
+.strLineBottom,
+.strLineTop,
+.xCoordNum,
+.yCoordNum {
+    position: absolute;
+    z-index: 8999;
+    pointer-events: none;
+    display: none;
+    opacity: 0
+}
+
+.cursor-background {
+    width: 22px;
+    height: 22px;
+    mix-blend-mode: saturation;
+    background: #fff
+}
+
+.strLineBottom,
+.strLineTop,
+.xCoordNum,
+.yCoordNum {
+    top: 0;
+    left: 0
+}
+
+.strLineBottom,
+.strLineTop {
+    background-color: #fff;
+    width: 1px;
+    height: 100%
+}
+
+.xCoordNum,
+.yCoordNum {
+    color: #fff;
+    font-family: "Mundial";
+    font-size: 15px
+}
+
+.yCoordNum {
+    transform: rotate(90deg)
+}
+
+.hrLineLeft,
+.hrLineRight {
+    position: absolute;
+    background-color: #fff;
+    z-index: 8999;
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    display: none;
+    opacity: 0
+}
+
+.projectsClickableWraper {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9000
+}
+
+.closeProjects {
+    width: 80px;
+    height: 80px;
+    background-color: #e4ddd4;
+    position: absolute;
+    right: 50px;
+    top: 100px;
+    z-index: 9000;
+    display: none
+}
+
+.closeIcon {
+    width: 20%;
+    height: 20%;
+    margin: 40%;
+    background: url(https://raw.githubusercontent.com/quincecreative/logrodProjectPage/gh-pages/close.svg);
+    background-size: cover
+}
+
+.projects_wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative
+}
+
+.project_background {
+    position: relative;
+    cursor: none !important
+}
+
+.projects_wrapper .project_background .projects_inner-wrapper {
+    width: 100%;
+    height: 100%;
+    display: inline-block
+}
+
+.projects_inner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.projects_wrapper {
+    width: 100%
+}
+
+.project-container {
+    position: absolute;
+    transition-timing-function: cubic-bezier(1, 0, .5, 1);
+    transform: scale(1)
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 10px 10px 28px 0 rgba(0, 0, 0, .75);
+    -moz-box-shadow: 10px 10px 28px 0 rgba(0, 0, 0, .75);
+    box-shadow: 10px 10px 28px 0 rgba(0, 0, 0, .75)
+}
+
+.project-title {
+    font-size: 22px;
+    color: #fff;
+    text-transform: uppercase;
+    clip-path: polygon(0 0, 100%0, 100% 100%, 0 100%);
+    line-height: 60px;
+    font-family: "Mundial"
+}
+
+.projects-titles {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0
+}
+
+.projects-title {
+    color: #8c8c8c;
+    font-size: 50px;
+    text-transform: uppercase;
+    line-height: 40px;
+    font-family: "Mundial"
+}
+
+.projects-bckg-images {
+    position: absolute;
+    transition: .5s
+}
+
+.transparent-bckg-img {
+    width: 450px;
+    height: 300px;
+    position: absolute;
+    opacity: .3
+}
